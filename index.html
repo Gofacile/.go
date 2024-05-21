@@ -427,7 +427,7 @@ alert("Cannot get current location");
         try {
             const response = await fetch('http://localhost:3000/check-balance');
             const data = await response.json();
-            document.getElementById("balance-display").value = Your balance: ${data.balance} Rs;
+            document.getElementById("balance-display").value = `Your balance: ${data.balance} Rs`;
         } catch (error) {
             console.error('Error:', error);
         }
@@ -470,7 +470,7 @@ document.getElementById('pay').addEventListener('click', function() {
     const totalFare = document.getElementById('TotalFare').value;
 
     if (from && to && numberOfPersons && totalFare) {
-        alert(Booking confirmed from ${from} to ${to} for ${numberOfPersons} persons. Total Fare: ${totalFare});
+        alert(`Booking confirmed from ${from} to ${to} for ${numberOfPersons} persons. Total Fare: ${totalFare}`);
     } else {
         alert('Please fill all the fields and calculate the fare before proceeding to payment.');
     }
@@ -509,7 +509,7 @@ document.getElementById('pay').addEventListener('click', function() {
                 body: JSON.stringify({ fare })
             });
             const data = await response.json();
-            document.getElementById("balance-display").value = Your balance: ${data.balance} Rs;
+            document.getElementById("balance-display").value = `Your balance: ${data.balance} Rs`;
             alert(data.message);
         }
 
